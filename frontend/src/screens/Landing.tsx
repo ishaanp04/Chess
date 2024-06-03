@@ -18,7 +18,7 @@ export const Landing = () => {
                         </h1>
                     </div>
                     <div className="mt-8 flex justify-center">
-                        <Button onClick={() => { 
+                        <Button color = "bg-pink-500" hoverColor = "bg-pink-600" onClick={() => { 
                             navigate("/game")
                         }}>
                             Play Online

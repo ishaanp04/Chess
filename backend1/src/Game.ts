@@ -36,9 +36,11 @@ export class Game {
     }) {
         // checking which player's move is this        
         if (this.moveCount % 2 === 0 && socket !== this.player1) {
+            console.log("early return 1");
             return;
         }
         if (this.moveCount % 2 === 1 && socket !== this.player2) {
+            console.log("early return 1");
             return;
         }
 
@@ -72,12 +74,12 @@ export class Game {
             return;
         }
 
-        console.log("game is not over buddy");
+        // console.log("game is not over buddy");
         
 
         if (this.moveCount % 2 === 0) {
             // player 1 just moved
-            console.log("player 1 just moved");
+            console.log("player 1 made a move");
             
             this.player2.send(JSON.stringify({
                 type: MOVE, 
@@ -85,7 +87,7 @@ export class Game {
             }))
         } else {
             // player 2 just moved
-            console.log("player 2 just moved");
+            console.log("player 2 made a move");
             this.player1.send(JSON.stringify({
                 type: MOVE, 
                 payload: move
@@ -93,5 +95,6 @@ export class Game {
         }
 
         this.moveCount++;
+        console.log(this.moveCount);
     }
 }
