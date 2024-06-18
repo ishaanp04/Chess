@@ -14,7 +14,7 @@ export const ChessBoard = ({ board, socket, setBoard, chess }: {
     socket: WebSocket;
 }) => {
     const [from, setFrom] = useState<null | Square>(null);
-    const [to, setTo] = useState<null | Square>(null);
+    // const [to, setTo] = useState<null | Square>(null);
 
     return <div className="text-white text-2xl border-x-8 border-y-8 border-cyan-800 rounded-lg overflow-hidden">
         {board.map((row, i) => {
